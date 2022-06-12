@@ -4,7 +4,7 @@
 			 xmlns:my="clr-namespace:OurMessenger2"
              x:Class="OurMessenger2.MainPage">
 
-    <StackLayout Padding="16,16,16,16">
+    <StackLayout Padding="16,16,16,16" Spacing="24">
         <StackLayout>
             <Frame CornerRadius="5">
                 <StackLayout>
@@ -22,7 +22,7 @@
                                 BackgroundColor="Red"
                                 TextColor="White"
 			                    Text="Logout"
-			                    Pressed="ButtonSecond_Pressed"
+			                    Pressed="ButtonLogout_Pressed"
 			                    />
                         </StackLayout>
                     </StackLayout>
@@ -38,17 +38,21 @@
                 </StackLayout>
             </Frame>
         </StackLayout>
-        <Button
-			Text="Go to login screen"
-			Pressed="ButtonSecond_Pressed"
-			/>
-        <Button
-			Text="Go to create account screen"
-			Pressed="ButtonThird_Pressed"
-			/>
-        <Button
-			Text="Go to chat screen"
-			Pressed="ButtonSecond_Pressed"
-			/>
+        <Frame CornerRadius="5">
+            <StackLayout>
+                <Button
+			        Text="Go to login screen"
+			        Pressed="ButtonSecond_Pressed"
+			        />
+                <Button
+			        Text="Go to create account screen"
+			        Pressed="ButtonThird_Pressed"
+			        />
+                <Button
+			        Text="Go to chat screen"
+			        Pressed="ButtonSecond_Pressed"
+			        />
+            </StackLayout>
+        </Frame>
     </StackLayout>
 </ContentPage>

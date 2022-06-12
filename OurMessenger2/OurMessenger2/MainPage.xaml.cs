@@ -27,5 +27,13 @@ namespace OurMessenger2
 		{
 			Navigation.PushModalAsync(new ThirdPage());
 		}
+		private async void ButtonLogout_Pressed(object sender, EventArgs e)
+		{
+			var sheetResult = await DisplayAlert("Выйти?", "Are you sure?", "Да", "Нет");
+			if(sheetResult)
+            {
+				// pass
+            }
+		}
 	}
 }
