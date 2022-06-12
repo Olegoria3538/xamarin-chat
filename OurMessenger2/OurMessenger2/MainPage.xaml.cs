@@ -12,24 +12,52 @@ namespace OurMessenger2
 	public partial class MainPage : ContentPage
 	{
 		public const string OurTitle = "Месседжер для меня и моего расстройства";
+		public bool isLogin = false;
+		public string login = "";
 		public MainPage()
 		{
+			
 			Title = "Мой awesome месседжер";
-
 			InitializeComponent();
 		}
 
-		private void Login_Pressed(object sender, EventArgs e)
+		public async Task<bool> loginAsync()
+        {
+			await Task.Delay(500);
+			return true;
+        }
+
+		private async void Login_Pressed(object sender, EventArgs e)
 		{
-			Navigation.PushModalAsync(new Login());
-		}
-		private void ButtonThird_Pressed(object sender, EventArgs e)
-		{
-			Navigation.PushModalAsync(new ThirdPage());
-		}
+			var LoginInstace = new Login();
+			LoginInstace.Disappearing += (sender2, e2) =>
+			{
+				isLogin = LoginInstace.isLogin;
+				if (LoginInstace.isLogin)
+				{
+					login = LoginInstace.login;
+					UserName.Text = LoginInstace.login;
+					StatusUser.Text = "online";
+					StatusUser.TextColor = Color.Green;
+				}
+            };
+			await Navigation.PushModalAsync(LoginInstace);
+		}	
 		private void CreateAccount_Pressed(object sender, EventArgs e)
 		{
-			Navigation.PushModalAsync(new CreateAccount());
+			var CreateAccountInstance = new CreateAccount();
+			CreateAccountInstance.Disappearing += (sender2, e2) =>
+			{
+				if(CreateAccountInstance.succes)
+                {
+					Login_Pressed(sender, e);
+				}
+			};
+			Navigation.PushModalAsync(CreateAccountInstance);
+		}
+		private void OpenChat_Pressed(object sender, EventArgs e)
+		{
+			Navigation.PushModalAsync(new ThirdPage());
 		}
 		private async void ButtonLogout_Pressed(object sender, EventArgs e)
 		{

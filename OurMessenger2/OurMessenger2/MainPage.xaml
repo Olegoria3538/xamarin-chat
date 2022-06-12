@@ -11,11 +11,11 @@
                     <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center">
                             <Label Text="status:" FontSize="16" />
-                            <Label x:Name="statusUser" Text="online" FontSize="16" TextColor="Green" />
+                            <Label x:Name="StatusUser" Text="offline" FontSize="16" TextColor="Gray" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" HeightRequest="35">
                             <Button
-                                WidthRequest="70" 
+                                WidthRequest="70"
                                 FontSize="12"
                                 Padding="0,0,0,0"
                                 CornerRadius="5"
@@ -34,7 +34,7 @@
                            IsClippedToBounds="True">
                         <Image x:Name="avatar" Source="https://n1s2.starhit.ru/6a/46/ae/6a46aeed947a183d67d1bc48211151bf/445x460_0_6a5d57baf3fab914fdfcc2cc563ed893@480x496_0xac120003_4430520541578509619.jpg" />
                     </Frame>
-                    <Label x:Name="userName" Text="Awesom user" FontSize="24" HorizontalTextAlignment="Center" />
+                    <Label x:Name="UserName" Text="Not authorized" FontSize="24" HorizontalTextAlignment="Center" />
                 </StackLayout>
             </Frame>
         </StackLayout>
@@ -50,7 +50,7 @@
 			        />
                 <Button
 			        Text="Go to chat screen"
-			        Pressed="Login_Pressed"
+			        Pressed="OpenChat_Pressed"
 			        />
             </StackLayout>
         </Frame>

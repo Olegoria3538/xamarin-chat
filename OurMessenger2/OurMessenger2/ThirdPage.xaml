@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OurMessenger2.ThirdPage">
     <ContentPage.Content>
-		<StackLayout>
+		<StackLayout Padding="16">
 			<ListView x:Name="ChatList">
 				<ListView.ItemTemplate>
 					<DataTemplate>

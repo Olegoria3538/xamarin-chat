@@ -5,8 +5,8 @@
     <ContentPage.Content>
         <StackLayout Padding="16">
             <Label Text="Войти в аккаунт" FontSize="24" />
-            <Entry  Placeholder="Имя" x:Name="LoginInput" />
-            <Entry  Placeholder="Пароль" x:Name="Password" IsPassword="True" />
+            <Entry Placeholder="Имя" x:Name="LoginInput" />
+            <Entry Placeholder="Пароль" x:Name="Password" IsPassword="True" />
             <StackLayout HorizontalOptions="End">
                 <Button Text="Войти в аккаунт" Pressed="Login_Pressed" />
             </StackLayout>
