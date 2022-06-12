@@ -4,48 +4,37 @@
 			 xmlns:my="clr-namespace:OurMessenger2"
              x:Class="OurMessenger2.MainPage">
 
-    <StackLayout>
-        <Label 
-			TextColor="{StaticResource LabelColor}"
-			Text="{x:Static my:MainPage.OurTitle}" 
-			FontSize="36" 
-			Padding="30,10,30,10"/>
-		<Label 
-			x:Name="ComplicatedLabel"
-			TextColor="{DynamicResource LabelColor}"
-			BindingContext="{x:Reference MySlider}"
-			Rotation="{Binding Path=Value}">
-			<Label.Text>I'm complicated label</Label.Text>
-		</Label>
-		<Label 
-			x:Name="RedLabel"
-			TextColor="{my:Redness Value=1.0}"
-			BindingContext="{x:Reference MySlider}"
-			Rotation="{Binding Path=Value}">
-			<Label.Text>I'm complicated label</Label.Text>
-		</Label>
-		<Slider Minimum="0" Maximum="360" x:Name="MySlider"/>
-		<Editor x:Name="MyEditor"/>
-		<Button
-			Text="Press me"
-			Pressed="ButtonApplyText_Pressed"
-			/>
-		<Button
-			Text="Change color"
-			Pressed="ButtonChangeColor_Pressed"
-			/>
-		<Button
-			Text="Ask me"
-			Pressed="ButtonAskMe_Pressed"
-			/>
-		<Button
-			Text="Go to second"
+    <StackLayout Padding="16,16,16,16">
+        <StackLayout>
+            <Frame CornerRadius="5">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="status:" FontSize="14" />
+                        <Label Text="online" FontSize="14" TextColor="Green" />
+                    </StackLayout>
+                    <Frame CornerRadius="100" 
+                           HeightRequest="150"
+                           WidthRequest="150"
+                           HorizontalOptions="Center"
+                           Padding="0"
+                           IsClippedToBounds="True">
+                        <Image x:Name="circleImg" Source="https://n1s2.starhit.ru/6a/46/ae/6a46aeed947a183d67d1bc48211151bf/445x460_0_6a5d57baf3fab914fdfcc2cc563ed893@480x496_0xac120003_4430520541578509619.jpg" />
+                    </Frame>
+                    <Label Text="Awesom user" FontSize="24" HorizontalTextAlignment="Center" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        <Button
+			Text="Go to login screen"
 			Pressed="ButtonSecond_Pressed"
 			/>
-		<Button
-			Text="Go to third"
+        <Button
+			Text="Go to create account screen"
 			Pressed="ButtonThird_Pressed"
 			/>
-	</StackLayout>
-
+        <Button
+			Text="Go to chat screen"
+			Pressed="ButtonSecond_Pressed"
+			/>
+    </StackLayout>
 </ContentPage>
