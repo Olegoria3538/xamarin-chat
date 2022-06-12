@@ -12,10 +12,10 @@ using Xamarin.Forms.Xaml;
 namespace OurMessenger2
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ThirdPage : ContentPage
+	public partial class ChatPage : ContentPage
 	{
 		public ObservableCollection<UserMessage> Messages;
-		public ThirdPage()
+		public ChatPage()
 		{
 			InitializeComponent();
 

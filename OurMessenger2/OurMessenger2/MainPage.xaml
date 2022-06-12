@@ -41,14 +41,17 @@
         <Frame CornerRadius="5">
             <StackLayout>
                 <Button
+                    x:Name="BtnLogin"
 			        Text="Go to login screen"
 			        Pressed="Login_Pressed"
 			        />
                 <Button
+                    x:Name="BtnCreateAccount"
 			        Text="Go to create account screen"
 			        Pressed="CreateAccount_Pressed"
 			        />
                 <Button
+                    x:Name="BtnOpenChat"
 			        Text="Go to chat screen"
 			        Pressed="OpenChat_Pressed"
 			        />

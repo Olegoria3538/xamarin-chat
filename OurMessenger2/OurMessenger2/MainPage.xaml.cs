@@ -14,19 +14,21 @@ namespace OurMessenger2
 		public const string OurTitle = "Месседжер для меня и моего расстройства";
 		public bool isLogin = false;
 		public string login = "";
+		public ChatPage chatPage = null;
 		public MainPage()
 		{
 			
 			Title = "Мой awesome месседжер";
 			InitializeComponent();
+			BtnOpenChat.SetValue(IsVisibleProperty, false);
 		}
-
-		public async Task<bool> loginAsync()
-        {
-			await Task.Delay(500);
-			return true;
-        }
-
+		private void OpenChat_Pressed(object sender, EventArgs e)
+		{
+			if (chatPage != null)
+			{
+				Navigation.PushModalAsync(chatPage);
+			}
+		}
 		private async void Login_Pressed(object sender, EventArgs e)
 		{
 			var LoginInstace = new Login();
@@ -39,6 +41,11 @@ namespace OurMessenger2
 					UserName.Text = LoginInstace.login;
 					StatusUser.Text = "online";
 					StatusUser.TextColor = Color.Green;
+					BtnLogin.SetValue(IsVisibleProperty, false);
+					BtnCreateAccount.SetValue(IsVisibleProperty, false);
+					BtnOpenChat.SetValue(IsVisibleProperty, true);
+					chatPage = new ChatPage();
+					OpenChat_Pressed(sender, e);
 				}
             };
 			await Navigation.PushModalAsync(LoginInstace);
@@ -54,10 +61,6 @@ namespace OurMessenger2
 				}
 			};
 			Navigation.PushModalAsync(CreateAccountInstance);
-		}
-		private void OpenChat_Pressed(object sender, EventArgs e)
-		{
-			Navigation.PushModalAsync(new ThirdPage());
 		}
 		private async void ButtonLogout_Pressed(object sender, EventArgs e)
 		{

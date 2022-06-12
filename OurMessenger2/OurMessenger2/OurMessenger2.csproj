@@ -27,8 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ThirdPage.xaml.cs">
-      <DependentUpon>ThirdPage.xaml</DependentUpon>
+    <Compile Update="ChatPage.xaml.cs">
+      <DependentUpon>ChatPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -51,7 +51,7 @@
     <EmbeddedResource Update="Page1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ThirdPage.xaml">
+    <EmbeddedResource Update="ChatPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
