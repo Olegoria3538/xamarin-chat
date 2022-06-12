@@ -46,7 +46,7 @@
 			        />
                 <Button
 			        Text="Go to create account screen"
-			        Pressed="ButtonThird_Pressed"
+			        Pressed="CreateAccount_Pressed"
 			        />
                 <Button
 			        Text="Go to chat screen"
