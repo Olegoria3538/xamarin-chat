@@ -42,7 +42,7 @@
             <StackLayout>
                 <Button
 			        Text="Go to login screen"
-			        Pressed="ButtonSecond_Pressed"
+			        Pressed="Login_Pressed"
 			        />
                 <Button
 			        Text="Go to create account screen"
@@ -50,7 +50,7 @@
 			        />
                 <Button
 			        Text="Go to chat screen"
-			        Pressed="ButtonSecond_Pressed"
+			        Pressed="Login_Pressed"
 			        />
             </StackLayout>
         </Frame>

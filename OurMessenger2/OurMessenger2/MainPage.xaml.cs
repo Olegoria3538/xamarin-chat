@@ -19,9 +19,9 @@ namespace OurMessenger2
 			InitializeComponent();
 		}
 
-		private void ButtonSecond_Pressed(object sender, EventArgs e)
+		private void Login_Pressed(object sender, EventArgs e)
 		{
-			Navigation.PushModalAsync(new SecondPage());
+			Navigation.PushModalAsync(new Login());
 		}
 		private void ButtonThird_Pressed(object sender, EventArgs e)
 		{
