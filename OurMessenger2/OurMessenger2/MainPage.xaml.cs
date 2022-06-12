@@ -14,7 +14,8 @@ namespace OurMessenger2
 		public const string OurTitle = "Месседжер для меня и моего расстройства";
 		public bool isLogin = false;
 		public string login = "";
-		public ChatPage chatPage = null;
+        public ChatPage chatPage = null;
+
 		public MainPage()
 		{
 			
@@ -46,7 +47,7 @@ namespace OurMessenger2
 					BtnCreateAccount.SetValue(IsVisibleProperty, false);
 					BtnOpenChat.SetValue(IsVisibleProperty, true);
 					BtnLogout.SetValue(IsVisibleProperty, true);
-					chatPage = new ChatPage();
+					chatPage = new ChatPage(login);
 					OpenChat_Pressed(sender, e);
 				}
             };

@@ -12,36 +12,27 @@ using Xamarin.Forms.Xaml;
 namespace OurMessenger2
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
+
 	public partial class ChatPage : ContentPage
 	{
+		string login = "";
 		public ObservableCollection<UserMessage> Messages;
-		public ChatPage()
+		public ChatPage(string login)
 		{
+			this.login = login;
 			InitializeComponent();
-
 			Messages = new ObservableCollection<UserMessage>();
-			Messages.Add(new UserMessage("Bob", "Hello"));
-			Messages.Add(new UserMessage("Tom", "Good morning"));
-			Messages.Add(new UserMessage("Nelly", "Bye bye"));
-
-			EmulateChat();
-
 			ChatList.ItemsSource = Messages;
 		}
-
-		private async void EmulateChat()
+		private void SendMessage_Pressed(object sender, EventArgs e)
 		{
-			while (true)
+			var text = FieldMassge?.Text != null ? FieldMassge.Text : "";
+			if (text.Length != 0)
 			{
-				AddMessage("Bob", "Hello");
-				await Task.Delay(500);
-				AddMessage("Tom", "Good morning");
-				await Task.Delay(500);
-				AddMessage("Nelly", "Bye bye");
-				await Task.Delay(500);
+				AddMessage(login, text);
+				FieldMassge.Text = "";
 			}
 		}
-
 		private void AddMessage(string user, string message)
 		{
 			var u = new UserMessage(user, message);

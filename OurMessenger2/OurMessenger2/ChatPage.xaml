@@ -8,24 +8,26 @@
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
-							<Label>
-								<Label.FormattedText>
-									<FormattedString>
-										<FormattedString.Spans>
-											<Span TextColor="Blue" FontAttributes="Bold" Text="{Binding Username}"/>
-											<Span TextColor="Blue" FontAttributes="Bold" Text=": "/>
-											<Span TextColor="Black" Text="{Binding Message}"/>
-										</FormattedString.Spans>
-									</FormattedString>
-								</Label.FormattedText>								
-							</Label>
+                            <StackLayout VerticalOptions="CenterAndExpand">
+								<Label>
+									<Label.FormattedText>
+										<FormattedString>
+											<FormattedString.Spans>
+												<Span TextColor="Blue" FontAttributes="Bold" Text="{Binding Username}"/>
+												<Span TextColor="Blue" FontAttributes="Bold" Text=": "/>
+												<Span TextColor="Black" Text="{Binding Message}"/>
+											</FormattedString.Spans>
+										</FormattedString>
+									</Label.FormattedText>								
+								</Label>
+                            </StackLayout>
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
 			<StackLayout Orientation="Horizontal">
-				<Editor HorizontalOptions="FillAndExpand"/>
-				<Button Text="Send"/>
+				<Editor x:Name="FieldMassge" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Send" Pressed="SendMessage_Pressed" />
 			</StackLayout>
 		</StackLayout>
     </ContentPage.Content>
