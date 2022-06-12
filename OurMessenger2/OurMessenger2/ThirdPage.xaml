@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OurMessenger2.ThirdPage">
+    <ContentPage.Content>
+		<StackLayout>
+			<ListView x:Name="ChatList">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Label>
+								<Label.FormattedText>
+									<FormattedString>
+										<FormattedString.Spans>
+											<Span TextColor="Blue" FontAttributes="Bold" Text="{Binding Username}"/>
+											<Span TextColor="Blue" FontAttributes="Bold" Text=": "/>
+											<Span TextColor="Black" Text="{Binding Message}"/>
+										</FormattedString.Spans>
+									</FormattedString>
+								</Label.FormattedText>								
+							</Label>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<StackLayout Orientation="Horizontal">
+				<Editor HorizontalOptions="FillAndExpand"/>
+				<Button Text="Send"/>
+			</StackLayout>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

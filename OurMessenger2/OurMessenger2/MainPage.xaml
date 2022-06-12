@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:my="clr-namespace:OurMessenger2"
+             x:Class="OurMessenger2.MainPage">
+
+    <StackLayout>
+        <Label 
+			TextColor="{StaticResource LabelColor}"
+			Text="{x:Static my:MainPage.OurTitle}" 
+			FontSize="36" 
+			Padding="30,10,30,10"/>
+		<Label 
+			x:Name="ComplicatedLabel"
+			TextColor="{DynamicResource LabelColor}"
+			BindingContext="{x:Reference MySlider}"
+			Rotation="{Binding Path=Value}">
+			<Label.Text>I'm complicated label</Label.Text>
+		</Label>
+		<Label 
+			x:Name="RedLabel"
+			TextColor="{my:Redness Value=1.0}"
+			BindingContext="{x:Reference MySlider}"
+			Rotation="{Binding Path=Value}">
+			<Label.Text>I'm complicated label</Label.Text>
+		</Label>
+		<Slider Minimum="0" Maximum="360" x:Name="MySlider"/>
+		<Editor x:Name="MyEditor"/>
+		<Button
+			Text="Press me"
+			Pressed="ButtonApplyText_Pressed"
+			/>
+		<Button
+			Text="Change color"
+			Pressed="ButtonChangeColor_Pressed"
+			/>
+		<Button
+			Text="Ask me"
+			Pressed="ButtonAskMe_Pressed"
+			/>
+		<Button
+			Text="Go to second"
+			Pressed="ButtonSecond_Pressed"
+			/>
+		<Button
+			Text="Go to third"
+			Pressed="ButtonThird_Pressed"
+			/>
+	</StackLayout>
+
+</ContentPage>
