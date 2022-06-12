@@ -8,9 +8,23 @@
         <StackLayout>
             <Frame CornerRadius="5">
                 <StackLayout>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="status:" FontSize="14" />
-                        <Label Text="online" FontSize="14" TextColor="Green" />
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="status:" FontSize="16" />
+                            <Label x:Name="statusUser" Text="online" FontSize="16" TextColor="Green" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" HeightRequest="35">
+                            <Button
+                                WidthRequest="70" 
+                                FontSize="12"
+                                Padding="0,0,0,0"
+                                CornerRadius="5"
+                                BackgroundColor="Red"
+                                TextColor="White"
+			                    Text="Logout"
+			                    Pressed="ButtonSecond_Pressed"
+			                    />
+                        </StackLayout>
                     </StackLayout>
                     <Frame CornerRadius="100" 
                            HeightRequest="150"
@@ -18,9 +32,9 @@
                            HorizontalOptions="Center"
                            Padding="0"
                            IsClippedToBounds="True">
-                        <Image x:Name="circleImg" Source="https://n1s2.starhit.ru/6a/46/ae/6a46aeed947a183d67d1bc48211151bf/445x460_0_6a5d57baf3fab914fdfcc2cc563ed893@480x496_0xac120003_4430520541578509619.jpg" />
+                        <Image x:Name="avatar" Source="https://n1s2.starhit.ru/6a/46/ae/6a46aeed947a183d67d1bc48211151bf/445x460_0_6a5d57baf3fab914fdfcc2cc563ed893@480x496_0xac120003_4430520541578509619.jpg" />
                     </Frame>
-                    <Label Text="Awesom user" FontSize="24" HorizontalTextAlignment="Center" />
+                    <Label x:Name="userName" Text="Awesom user" FontSize="24" HorizontalTextAlignment="Center" />
                 </StackLayout>
             </Frame>
         </StackLayout>
