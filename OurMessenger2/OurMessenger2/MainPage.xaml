@@ -15,6 +15,7 @@
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" HeightRequest="35">
                             <Button
+                                x:Name="BtnLogout"
                                 WidthRequest="70"
                                 FontSize="12"
                                 Padding="0,0,0,0"

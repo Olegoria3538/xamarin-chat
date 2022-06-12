@@ -21,6 +21,7 @@ namespace OurMessenger2
 			Title = "Мой awesome месседжер";
 			InitializeComponent();
 			BtnOpenChat.SetValue(IsVisibleProperty, false);
+			BtnLogout.SetValue(IsVisibleProperty, false);
 		}
 		private void OpenChat_Pressed(object sender, EventArgs e)
 		{
@@ -44,6 +45,7 @@ namespace OurMessenger2
 					BtnLogin.SetValue(IsVisibleProperty, false);
 					BtnCreateAccount.SetValue(IsVisibleProperty, false);
 					BtnOpenChat.SetValue(IsVisibleProperty, true);
+					BtnLogout.SetValue(IsVisibleProperty, true);
 					chatPage = new ChatPage();
 					OpenChat_Pressed(sender, e);
 				}
@@ -64,11 +66,18 @@ namespace OurMessenger2
 		}
 		private async void ButtonLogout_Pressed(object sender, EventArgs e)
 		{
-			var sheetResult = await DisplayAlert("Выйти?", "Are you sure?", "Да", "Нет");
+			var sheetResult = await DisplayAlert("Выйти?", "", "Да", "Нет");
 			if(sheetResult)
             {
-				// pass
-            }
+				UserName.Text = ":(";
+				StatusUser.Text = "offline";
+				StatusUser.TextColor = Color.Gray;
+				BtnLogin.SetValue(IsVisibleProperty, true);
+				BtnCreateAccount.SetValue(IsVisibleProperty, true);
+				BtnOpenChat.SetValue(IsVisibleProperty, false);
+				BtnLogout.SetValue(IsVisibleProperty, false);
+				chatPage = null;
+			}
 		}
 	}
 }
